@@ -8,16 +8,16 @@ listener http:Listener httpListener = new (9090);
 
 // Exposes endpoints and listens to requests
 // Exposes it to /
-service / on httpListener{
+service / on httpListener {
     // resource is like a view listening to a request
     // resource function [method] [endpoint name]() return [type defaults to text/plain content type]
-    
-    resource function get greeting() returns string{
+
+    resource function get greeting() returns string {
         return "Hello World";
     }
 
-    resource function get greeting/[string name]() returns string{
-        return "Hello "+name;
+    resource function get greeting/[string name]() returns string {
+        return "Hello " + name;
     }
 }
 
